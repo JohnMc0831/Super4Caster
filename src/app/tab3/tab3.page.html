@@ -1,9 +1,66 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color='primary'>
+      <ion-title>
+        Confidence Assessments
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card class='ion-padding' color='light'>
+        <ion-text color='secondary'>
+          {{ question }}
+        </ion-text>
+        <hr />
+        <ion-text color='medium'>
+          <p>Choose whether the statement above is <ion-text color='primary'>True</ion-text> or <ion-text color='danger'>False</ion-text>, 
+            then select how confident you feel, where 50% is a complete guess (coin-flip) and 100% means absolute certainty.</p>
+        </ion-text>
+    </ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size='5'>
 
-<ion-content></ion-content>
+            </ion-col>
+            <ion-col size='2'>
+                <ion-toggle color='primary' [(ngModel)]='currentAnswer' (ionChange)='flipAnswer()'></ion-toggle>
+            </ion-col>
+            <ion-col size='5'>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+          <span class='ion-text-center' id='helpText'></span>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+              <ion-col size='3'>
+  
+              </ion-col>
+              <ion-col size='6'>
+                  <ion-label color='primary'>Confidence Level</ion-label>
+                  <ion-select value="confidenceLevel" okText="OK" cancelText="Dismiss">
+                    <ion-select-option value="50">50%</ion-select-option>
+                    <ion-select-option value="60">60%</ion-select-option>
+                    <ion-select-option value="70">70%</ion-select-option>
+                    <ion-select-option value="80">80%</ion-select-option>
+                    <ion-select-option value="90">90%</ion-select-option>
+                    <ion-select-option value="95">95%</ion-select-option>
+                    <ion-select-option value="100">100%</ion-select-option>
+                  </ion-select>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" color='primary' fill="outline">
+        Next
+        <ion-icon slot="end" name="return-right"></ion-icon>
+      </ion-button>
+  </ion-content>
+  

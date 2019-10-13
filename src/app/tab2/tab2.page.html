@@ -1,9 +1,55 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color='primary'>
     <ion-title>
-      Tab Two
+      Confidence Assessments
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card class='ion-padding' color='light'>
+      <ion-text color='secondary'>
+        {{ question }}
+      </ion-text>
+      <hr />
+      <ion-text color='medium'>
+        <p>Use the knobs below to define a date range.  When you are finished, click "Next" to continue.</p>
+      </ion-text>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+        <ion-range [(ngModel)]='currentValue' color='tertiary' dualKnobs='true' pin='true' snaps='true' [min]="1950" [max]="2000" step="1" (ionChange)='onRangeChange()'>
+            <ion-label slot="start"><ion-text color='tertiary'><span class='smallTertiaryText'>Lower</span></ion-text></ion-label>
+            <ion-label slot="end"><ion-text color='tertiary'><span class='smallTertiaryText'>Upper</span></ion-text></ion-label>
+          </ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text color='primary'>
+                Lower Bound:
+            </ion-text>
+          </ion-col>
+          <ion-col>
+            {{ lowerBound }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-text color='primary'>
+                    Upper Bound:
+                </ion-text>
+            </ion-col>
+            <ion-col>
+              {{ upperBound }}
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" color='primary' fill="outline">
+      Next
+      <ion-icon slot="end" name="return-right"></ion-icon>
+    </ion-button>
+</ion-content>

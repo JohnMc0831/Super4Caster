@@ -7,6 +7,22 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  public question = 'The first probe to land on Mars, Viking 1, landed there in what year?';
+  public correctAnswer = '1976';
+  public lowerBound = 1975;
+  public upperBound = 1975;
+  public currentValue: any;
+
+  constructor() {
+    this.currentValue = {
+      lower: 1950,
+      upper: 1950
+    };
+  }
+
+  onRangeChange() {
+    this.lowerBound = this.currentValue.lower;
+    this.upperBound = this.currentValue.upper;
+  }
 
 }
