@@ -18,7 +18,7 @@ describe('Tab3Page', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it('should create Tab3Page / Help Page.', () => {
     expect(component).toBeTruthy();
   });
 });

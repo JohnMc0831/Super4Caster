@@ -18,7 +18,7 @@
   </ion-card>
   <ion-list>
     <ion-item>
-        <ion-range [(ngModel)]='currentValue' color='tertiary' dualKnobs='true' pin='true' snaps='true' [min]="1950" [max]="2000" step="1" (ionChange)='onRangeChange()'>
+        <ion-range (ngModel)='currentValue' color='tertiary' dualKnobs='true' pin='true' snaps='true' [min]="1950" [max]="2000" step="1" (ionChange)='onRangeChange()'>
             <ion-label slot="start"><ion-text color='tertiary'><span class='smallTertiaryText'>Lower</span></ion-text></ion-label>
             <ion-label slot="end"><ion-text color='tertiary'><span class='smallTertiaryText'>Upper</span></ion-text></ion-label>
           </ion-range>

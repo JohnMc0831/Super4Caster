@@ -21,7 +21,7 @@ describe('Tab4Page', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create Tab4Page / Social Media Page.', () => {
     expect(component).toBeTruthy();
   });
 });

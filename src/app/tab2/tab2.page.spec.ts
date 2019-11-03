@@ -18,7 +18,7 @@ describe('Tab2Page', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it('should create Tab2Page / Settings Page', () => {
     expect(component).toBeTruthy();
   });
 });

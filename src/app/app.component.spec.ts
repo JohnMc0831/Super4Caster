@@ -42,6 +42,11 @@ describe('AppComponent', () => {
     expect(splashScreenSpy.hide).toHaveBeenCalled();
   });
 
-  // TODO: add more tests!
+  it('should have the title Super4caster', async () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const ne = fixture.nativeElement;
+    const title = ne.querySelector('ion-title');
+    expect(title.innerText).toEqual('Super4caster');
+  });
 
 });
