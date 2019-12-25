@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Assessment, Question, Response, Hero } from '../models/models';
+import { CasterService } from '../services/caster.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,23 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  public assessments: Assessment[];
 
-  public question = 'The first probe to land on Mars, Viking 1, landed there in what year?';
-  public correctAnswer = '1976';
-  public lowerBound = 1975;
-  public upperBound = 1975;
-  public currentValue: any;
-
-  constructor() {
-    this.currentValue = {
-      lower: 1950,
-      upper: 1950
-    };
+  constructor(public caster: CasterService) {
+    this.caster.getAssessmentsForHero("johnmc0831@gmail.com").subscribe((assessments) => {
+      this.assessments = assessments;
+    });
   }
-
-  onRangeChange() {
-    this.lowerBound = this.currentValue.lower;
-    this.upperBound = this.currentValue.upper;
-  }
-
 }

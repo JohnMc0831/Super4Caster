@@ -13,6 +13,7 @@ export class Question {
   CorrectAnswerDec: number;
   CorrectAnswerBin: number;
   Confidence: number;
+  Responses: Response[];
 
   constructor(values: Object = {}) {
     Object.assign(this, values);
@@ -33,4 +34,27 @@ export class Response {
     constructor(values: Object = {}) {
         Object.assign(this, values);
     }
+}
+
+export class Hero {
+  Id: number;
+  Mail: string;
+  GivenName: string;
+  Surname: string;
+  FriendlyName: string;
+  DateJoined: Date;
+  Status: string;
+  OrgId: number;
+  Assessments: Assessment[];
+  Questions: Question[];
+  Responses: Response[];
+}
+
+export class Assessment {
+  Id: number;
+  AssessmentName: string;
+  Questions: Question[];
+  Responses: Response[];
+  Heroes: Hero[];
+  CreatedOn: Date;
 }

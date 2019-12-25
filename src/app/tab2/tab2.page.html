@@ -7,7 +7,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class='ion-padding' color='light'>
+  <h2 ion-text>My Confidence Assessments</h2>
+  <ion-list padding *ngFor='let a of assessments'>
+    <ion-item >
+      {{a.AssessmentName}}
+    </ion-item>
+  </ion-list>
+  <!-- <ion-card class='ion-padding' color='light'>
       <ion-text color='secondary'>
         {{ question }}
       </ion-text>
@@ -51,5 +57,5 @@
   <ion-button expand="block" color='primary' fill="outline">
       Next
       <ion-icon slot="end" name="return-right"></ion-icon>
-    </ion-button>
+    </ion-button> -->
 </ion-content>

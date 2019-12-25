@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/catch';
+// import 'rxjs/add/operator/map';
 import { catchError, tap } from 'rxjs/operators';
 import { Question, Response } from '../models/models';
 
@@ -10,24 +10,32 @@ import { Question, Response } from '../models/models';
   providedIn: 'root'
 })
 export class CasterService {
-  baseUrl = 'http://localhost:4200';
+  baseUrl = '/api/caster';
 
   constructor(private  httpClient: HttpClient) { }
 
   // GET
   public getQuestionbyId(questionId: number): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/api/question/${questionId}`)
+    return this.httpClient.get(`${this.baseUrl}/question/${questionId}`)
     .pipe(
       tap(_ => console.log('queried for a question by id...')),
       catchError(this.handleError('getQuestionById'))
       );
   }
 
+  public getAssessmentsForHero(heroMail: string): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/assessments/${heroMail}`)
+    .pipe(
+      tap(_ => console.log(`queried for assessments for ${heroMail}`)),
+      catchError(this.handleError('getAssessmentsForHero'))
+    );
+  }
+
   // POST
   public postResponse(response: Response) {
-    return this.httpClient.post(`${this.baseUrl}/api/response`, response)
+    return this.httpClient.post(`${this.baseUrl}/response`, response)
     .pipe(
-      tap(_ => console.log(`posted response ${response.value}...`)),
+      tap(_ => console.log(`posted response ${response.LowerBoundInc}...`)),
       catchError(this.handleError('postResponse'))
       );
   }

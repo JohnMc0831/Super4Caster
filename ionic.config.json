@@ -1,5 +1,11 @@
 {
   "name": "Superforecaster",
   "integrations": {},
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:5000/api"
+    }
+  ]
 }
