@@ -7,10 +7,25 @@
 </ion-header>
 
 <ion-content>
-  <h2 ion-text>My Confidence Assessments</h2>
-  <ion-list padding *ngFor='let a of assessments'>
-    <ion-item >
-      {{a.AssessmentName}}
+
+  <ion-list class='ion-padding' *ngFor='let a of assessments'>
+    <ion-list-header>
+      <h2>
+        <ion-text color='primary'>
+          My Assessments
+        </ion-text>
+      </h2>
+    </ion-list-header>
+    <ion-item>
+      <ion-label color='secondary'>
+        {{a.assessmentName}}
+        <span style='display:block;' class='smallPrimaryText'>
+          created {{showPrettyDate(a.createdOn)}}
+        </span>
+      </ion-label>
+      <ion-button (click)='takeAssessment(a.id)' fill='outline' slot="end">
+        Take
+      </ion-button>
     </ion-item>
   </ion-list>
   <!-- <ion-card class='ion-padding' color='light'>

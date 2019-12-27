@@ -5,7 +5,7 @@
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "http://localhost:5000/api"
+      "proxyUrl": "https://localhost:5001/api/caster"
     }
   ]
 }

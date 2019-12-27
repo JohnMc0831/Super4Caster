@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { GamificationModule } from 'angular-gamification';
 
 import { HttpClientModule } from '@angular/common/http';
+import { AssessmentSummaryPageModule } from '../app/assessment-summary/assessment-summary.module';
 
 const levels = [
   { badge: 'BEGINNER', icon: './../assets/badges/BEGINNER.svg', range: { min: 1, max: 99 } },
@@ -31,7 +32,7 @@ const config = {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GamificationModule.forRoot(config), HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, GamificationModule.forRoot(config), HttpClientModule, AssessmentSummaryPageModule],
   providers: [
     StatusBar,
     SplashScreen,

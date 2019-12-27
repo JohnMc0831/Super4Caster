@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>
+      Assessment Summary
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='ion-padding'>
+  <h3>
+    <ion-text color='primary'>
+      {{assessment.assessmentName}}
+    </ion-text>
+  </h3>
+  <p>
+    There are {{questions.length}} questions included in this assessment.
+  </p>
+  <p>
+    When you are ready to begin, press the Start button below.
+  </p>
+  <ion-button href='/question' fill='outline' expand='block' color='danger'>Start</ion-button>
+</ion-content>

@@ -10,12 +10,13 @@ import { Question, Response } from '../models/models';
   providedIn: 'root'
 })
 export class CasterService {
-  baseUrl = '/api/caster';
+  baseUrl = 'https://localhost:5001/api/caster';
+  // baseUrl = '/api';
 
   constructor(private  httpClient: HttpClient) { }
 
   // GET
-  public getQuestionbyId(questionId: number): Observable<any> {
+  public getQuestionById(questionId: number): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}/question/${questionId}`)
     .pipe(
       tap(_ => console.log('queried for a question by id...')),
@@ -28,6 +29,14 @@ export class CasterService {
     .pipe(
       tap(_ => console.log(`queried for assessments for ${heroMail}`)),
       catchError(this.handleError('getAssessmentsForHero'))
+    );
+  }
+
+  public getAssessmentById(id: number): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/assessments/id/${id}`)
+    .pipe(
+      tap(_ => console.log(`queried for assessment by Id ${id}`)),
+      catchError(this.handleError('getAssessmentById'))
     );
   }
 

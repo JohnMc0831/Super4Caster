@@ -55,6 +55,7 @@ export class Assessment {
   AssessmentName: string;
   Questions: Question[];
   Responses: Response[];
+  questionOrder: string;
   Heroes: Hero[];
   CreatedOn: Date;
 }
